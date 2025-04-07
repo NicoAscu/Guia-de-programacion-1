@@ -22,6 +22,15 @@ public class Simulacro : MonoBehaviour
     {
       //2. Ingreso de datos
 
+        if (cantidadDeDias < 3)
+        {
+            Debug.Log("Cantidad de dias no valida");
+        }
+        else
+        {
+
+        
+
       if(codigoAnimal == "G" || codigoAnimal == "g"){
         racionAnimalActual = racionGatos;
 
@@ -31,7 +40,11 @@ public class Simulacro : MonoBehaviour
 
       }else if(codigoAnimal == "PG" ||codigoAnimal == "pg"){
         racionAnimalActual = racionPerroGrande;
-      }
+      }else
+            {
+                Debug.Log("Codigo no valido");
+                return;
+            }
 
       //3. Procesamiento de los datos
 
@@ -43,8 +56,8 @@ public class Simulacro : MonoBehaviour
 
       Debug.Log("Para ese periodo se necesitan " + gramosComidaTotal + " gramos de alimento");
       Debug.Log("Costo alimento: $" + costoAlimento);
-    }
-
+        }
+}
     // Update is called once per frame
     void Update()
     {
